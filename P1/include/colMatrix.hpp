@@ -2,9 +2,10 @@
 
 #include "matrix.hpp"
 
-class ColMatrix {
+class ColMatrix : public Matrix {
  private:
  public:
   ColMatrix() {}
   ~ColMatrix() {}
+  Matrix* product (Matrix* matrix2){};
 };

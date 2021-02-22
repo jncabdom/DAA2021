@@ -1,5 +1,7 @@
 #include "../include/matrix.hpp"
 
+Matrix::Matrix(std::vector<std::vector<int>> newData) : data(newData) {}
+
 void Matrix::randomFill(int sizeN, int sizeM) {
   data.clear();
   std::vector<int> auxData;

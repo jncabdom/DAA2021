@@ -6,6 +6,7 @@ class ColMatrix : public Matrix {
  private:
  public:
   ColMatrix() {}
+  ColMatrix(std::vector<std::vector<int>> newData) : Matrix(newData) {}
   ~ColMatrix() {}
-  Matrix* product (Matrix* matrix2){};
+  Matrix* product (Matrix* another);
 };

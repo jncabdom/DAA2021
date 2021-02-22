@@ -9,7 +9,7 @@
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/build/matrixProduct",
-      "args": ["1", "5", "1"],
+      "args": ["15", "5", "100"],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],

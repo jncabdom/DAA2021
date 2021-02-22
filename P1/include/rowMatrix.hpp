@@ -6,6 +6,7 @@ class RowMatrix : public Matrix {
  private:
  public:
   RowMatrix() {}
+  RowMatrix(std::vector<std::vector<int>> newData) : Matrix(newData) {}
   ~RowMatrix() {}
-  Matrix* product (Matrix* matrix2){};
+  Matrix* product (Matrix* another);
 };

@@ -7,7 +7,7 @@ void Matrix::randomFill(int sizeN, int sizeM) {
   std::vector<int> auxData;
   for(int i = 0; i < sizeN; i++) {
     for(int j = 0; j < sizeM; j++) {
-      auxData.push_back(rand() % 99);
+      auxData.push_back(rand() % 4);
     }
     data.push_back(auxData);
     auxData.clear();

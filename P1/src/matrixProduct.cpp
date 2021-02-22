@@ -33,7 +33,12 @@ int main(int argc, char* argv[]) {
     aRow->copy(*baseMat1);
     bRow->copy(*baseMat2);
     aCol->copy(*baseMat1);
-    bCol->copy(*baseMat1);
+    bCol->copy(*baseMat2);
+
+    //std::cout << "Matriz base 1: " << std::endl;
+    //baseMat1 -> print(std::cout);
+    //std::cout << "Matriz base 2: " << std::endl;
+    //baseMat2 -> print(std::cout);
 
     // Row Product
     auto before = std::chrono::high_resolution_clock::now();
@@ -41,11 +46,17 @@ int main(int argc, char* argv[]) {
     auto after = std::chrono::high_resolution_clock::now();
     auto durationRow = std::chrono::duration_cast<s>(after - before).count();
 
+    //std::cout << "Resultado row: " << std::endl;
+    //rowResult -> print(std::cout);
+
     // Column Product
     before = std::chrono::high_resolution_clock::now();
-    Matrix* ColResult = aCol->product(bCol);
+    Matrix* colResult = aCol->product(bCol);
     after = std::chrono::high_resolution_clock::now();
     auto durationCol = std::chrono::duration_cast<s>(after - before).count();
+
+    //std::cout << "Resultado col: " << std::endl;
+    //colResult -> print(std::cout);
 
     std::cout << "Duración del producto por columnas: " << durationRow
               << " milisegundos" << std::endl;

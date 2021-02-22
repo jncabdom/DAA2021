@@ -7,7 +7,7 @@ Matrix* RowMatrix::product(Matrix* matrix2) {
   for (int i = 0; i < getMatrix().size(); i++) {
     for (int j = 0; j < matrix2->getMatrix()[i].size(); j++) {
       for (int k = 0; k < matrix2->getMatrix().size(); k++) {
-        total += getMatrix()[i][j] * matrix2->getMatrix()[j][i];
+        total += getMatrix()[i][k] * matrix2->getMatrix()[k][j];
       }
       row.push_back(total);
       total = 0;

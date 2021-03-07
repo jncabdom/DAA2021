@@ -18,6 +18,7 @@
 #include "InputTape.h"
 #include "OutputTape.h"
 #include "Program.h"
+#include "Memory.h"
 
 class Cpu {
  private:
@@ -25,8 +26,12 @@ class Cpu {
   InputTape inputTape;
   OutputTape outputTape;
   std::string outputStream;
+  Memory memory;
 
  public:
-  Cpu(Program, std::ifstream&, std::string, bool);
+  Cpu(Program, std::ifstream&, std::string);
   ~Cpu() {}
+  std::ostream& printOutputTape(std::ostream&);
+  std::ostream& printInputTape(std::ostream&);
+  std::ostream& printRegisters(std::ostream&);
 };

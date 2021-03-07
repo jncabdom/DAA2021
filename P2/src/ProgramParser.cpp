@@ -13,19 +13,18 @@
 
 #include "../include/ProgramParser.h"
 
-
 ProgramParser::ProgramParser(std::ifstream& input, char commentSign) {
   std::string line;
   Instruction newInstruction;
-  std::pair<std::string,int> subRoutine;
+  std::pair<std::string,int> tag;
   while(std::getline(input, line)) {
     if((line[0] != commentSign) && (line != "")) {
       line.erase(std::remove(line.begin(), line.end(), '\t'), line.end());
       std::size_t pos = line.find(':');
       if(pos != std::string::npos) {
         std::string name = line.substr(0, pos);
-        subRoutine = std::make_pair(name,parsedProgram.size());
-        subRoutines.push_back(subRoutine);
+        tags.insert(std::pair<std::string,int>(name,parsedProgram.size()));
+        
         line = line.substr(pos+1, line.size() - 1);
       }
       newInstruction = Instruction(line);

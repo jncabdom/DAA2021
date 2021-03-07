@@ -13,17 +13,24 @@
 
 #include "../include/Cpu.h"
 
-Cpu::Cpu(Program newProgram, std::ifstream& input, std::string output,
-         bool debug) {
+Cpu::Cpu(Program newProgram, std::ifstream& input, std::string output) {
   inputTape = InputTape(input);
   outputTape = OutputTape();
   outputStream = output;
   program = newProgram;
+}
 
-  // Provisional: solo para el funcionamiento de la primera entrega:
-  std::cout << "Programa leído:" << std::endl << std::endl;
-  program.print(std::cout);
-  std::cout << std::endl << "Cinta de entrada:" << std::endl << std::endl;
-  inputTape.print(std::cout);
-  std::cout << std::endl;
+std::ostream& Cpu::printInputTape(std::ostream& os) {
+  inputTape.print(os);
+  return os;
+}
+
+std::ostream& Cpu::printOutputTape(std::ostream& os) {
+  outputTape.print(os);
+  return os;
+}
+
+std::ostream& Cpu::printRegisters(std::ostream& os) {
+  os << memory;
+  return os;
 }

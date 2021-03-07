@@ -14,14 +14,14 @@
 #include "../include/Program.h"
 
 Program::Program(std::vector<Instruction> instructions,
-                 std::vector<std::pair<std::string, int>> newSubRoutines) {
+                 std::map<std::string, int> newTags) {
   program = instructions;
-  subRoutines = newSubRoutines;
+  tags = newTags;
 }
 
 std::ostream& Program::print(std::ostream& os) {
   for(int i = 0; i < program.size(); i++) {
-    for(auto aux: subRoutines) {
+    for(auto aux: tags) {
       if(aux.second == i) {
         os << aux.first << ": ";
       }

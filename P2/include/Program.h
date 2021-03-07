@@ -16,15 +16,16 @@
 #include "Instruction.h"
 
 #include <iostream>
+#include <map>
 
 class Program
 {
 private:
   std::vector<Instruction> program;
-  std::vector<std::pair<std::string, int>> subRoutines;
+  std::map<std::string, int> tags;
 public:
   Program() {}
-  Program(std::vector<Instruction>, std::vector<std::pair<std::string, int>>);
+  Program(std::vector<Instruction>, std::map<std::string, int>);
   ~Program() {}
   std::ostream& print(std::ostream&);
 };

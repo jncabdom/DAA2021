@@ -17,6 +17,7 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <map>
 
 #include "../include/Instruction.h"
 #include "../include/Program.h"
@@ -25,11 +26,11 @@ class ProgramParser
 {
 private:
   std::vector<Instruction> parsedProgram;
-  std::vector<std::pair<std::string,int>> subRoutines;
+  std::map<std::string,int> tags;
 public:
   ProgramParser() {}
   ProgramParser(std::ifstream&, char);
   ~ProgramParser() {}
 
-  Program getParsedProgram() { return Program(parsedProgram, subRoutines); }
+  Program getParsedProgram() { return Program(parsedProgram, tags); }
 };

@@ -326,7 +326,7 @@ void machines::VND(int search) {
  * its neighbors. If not, we set k to k + 1 and explore again.
  */
 void machines::GVNS(int search) {
-  for (int i = 0; i < 100; i++) {
+  for (int i = 0; i < 20; i++) {
     grasp(3, 1, search, 1, 100);
     int k = 1;
     int maxK = calculateMaxK();

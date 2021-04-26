@@ -87,6 +87,7 @@ void menu() {
 }
 
 void fullTest() {
+  
   std::cout << "----- ALGORITMO GREEDY 1 -----\n";
   start = std::chrono::steady_clock::now();
   machinesTest.greedy1();
@@ -114,80 +115,80 @@ void fullTest() {
   end = std::chrono::steady_clock::now();
   machinesTest.showResults(std::cout);
   std::cout << "Elapsed time: "
-            << std::chrono::duration_cast<std::chrono::microseconds>(end -
+            << std::chrono::duration_cast<std::chrono::milliseconds>(end -
                                                                      start)
                    .count()
-            << "μs\n\n";
+            << "ms\n\n";
   std::cout << "-- Intercambio Inter (ANSIOSA):\n";
   start = std::chrono::steady_clock::now();
   machinesTest.grasp(lrcNumber, 2, 2, stop, iterations);
   end = std::chrono::steady_clock::now();
   machinesTest.showResults(std::cout);
   std::cout << "Elapsed time: "
-            << std::chrono::duration_cast<std::chrono::microseconds>(end -
+            << std::chrono::duration_cast<std::chrono::milliseconds>(end -
                                                                      start)
                    .count()
-            << "μs\n\n";
+            << "ms\n\n";
   std::cout << "-- Intercambio Intra (GREEDY):\n";
   start = std::chrono::steady_clock::now();
   machinesTest.grasp(lrcNumber, 1, search, stop, iterations);
   end = std::chrono::steady_clock::now();
   machinesTest.showResults(std::cout);
   std::cout << "Elapsed time: "
-            << std::chrono::duration_cast<std::chrono::microseconds>(end -
+            << std::chrono::duration_cast<std::chrono::milliseconds>(end -
                                                                      start)
                    .count()
-            << "μs\n\n";
+            << "ms\n\n";
   std::cout << "-- Intercambio Intra (ANSIOSA):\n";
   start = std::chrono::steady_clock::now();
   machinesTest.grasp(lrcNumber, 1, 2, stop, iterations);
   end = std::chrono::steady_clock::now();
   machinesTest.showResults(std::cout);
   std::cout << "Elapsed time: "
-            << std::chrono::duration_cast<std::chrono::microseconds>(end -
+            << std::chrono::duration_cast<std::chrono::milliseconds>(end -
                                                                      start)
                    .count()
-            << "μs\n\n";
+            << "ms\n\n";
   std::cout << "-- Reinserción Inter (GREEDY):\n";
   start = std::chrono::steady_clock::now();
   machinesTest.grasp(lrcNumber, 4, search, stop, iterations);
   end = std::chrono::steady_clock::now();
   machinesTest.showResults(std::cout);
   std::cout << "Elapsed time: "
-            << std::chrono::duration_cast<std::chrono::microseconds>(end -
+            << std::chrono::duration_cast<std::chrono::milliseconds>(end -
                                                                      start)
                    .count()
-            << "μs\n\n";
+            << "ms\n\n";
   std::cout << "-- Reinserción Inter (ANSIOSA):\n";
   start = std::chrono::steady_clock::now();
   machinesTest.grasp(lrcNumber, 4, 2, stop, iterations);
   end = std::chrono::steady_clock::now();
   machinesTest.showResults(std::cout);
   std::cout << "Elapsed time: "
-            << std::chrono::duration_cast<std::chrono::microseconds>(end -
+            << std::chrono::duration_cast<std::chrono::milliseconds>(end -
                                                                      start)
                    .count()
-            << "μs\n\n";
+            << "ms\n\n";
   std::cout << "-- Reinserción Intra (GREEDY):\n";
   start = std::chrono::steady_clock::now();
   machinesTest.grasp(lrcNumber, 3, search, stop, iterations);
   end = std::chrono::steady_clock::now();
   machinesTest.showResults(std::cout);
   std::cout << "Elapsed time: "
-            << std::chrono::duration_cast<std::chrono::microseconds>(end -
+            << std::chrono::duration_cast<std::chrono::milliseconds>(end -
                                                                      start)
                    .count()
-            << "μs\n\n";
+            << "ms\n\n";
   std::cout << "-- Reinserción Intra (ANSIOSA):\n";
   start = std::chrono::steady_clock::now();
   machinesTest.grasp(lrcNumber, 3, 2, stop, iterations);
   end = std::chrono::steady_clock::now();
   machinesTest.showResults(std::cout);
   std::cout << "Elapsed time: "
-            << std::chrono::duration_cast<std::chrono::microseconds>(end -
+            << std::chrono::duration_cast<std::chrono::milliseconds>(end -
                                                                      start)
                    .count()
-            << "μs\n\n";
+            << "ms\n\n";
   std::cout << "------- ALGORITMO VND (GREEDY) --------\n";
   start = std::chrono::steady_clock::now();
   machinesTest.grasp(3, 1, search, 1, 100);

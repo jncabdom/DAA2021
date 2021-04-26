@@ -32,6 +32,8 @@ class machines {
   std::ostream& showResults(std::ostream&);
   void read(std::string);
 
+  inline int getTCT() { return calculateTCT(allMachines); }
+
   void greedy1();
   void greedy2();
   void grasp(int, int, int, int, int);

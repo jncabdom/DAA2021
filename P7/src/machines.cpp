@@ -159,6 +159,9 @@ void machines::grasp(int lrcK, int operation, int search, int stopCondition,
   }
 }
 
+/*
+ * Calculates the complete TCT of the full machine array.
+ */
 int machines::calculateTCT(std::vector<machine> solution) {
   int counter = 0;
   for (auto machine : solution) {
@@ -353,6 +356,10 @@ void machines::GVNS(int search) {
   }
 }
 
+/*
+ * Makes *changes* random interchanges between machines to jump to a
+ * close neighborhood.
+ */
 void machines::randomJumpInterchange(int changes) {
   std::vector<std::set<int>> changesMade;
   changesMade.resize(allMachines.size());
@@ -392,6 +399,10 @@ void machines::randomJumpInterchange(int changes) {
   }
 }
 
+/*
+ * Calculates max value of K for the random interchange,
+ * k being the minimum between 5 and the littlest array of instructions.
+ */
 int machines::calculateMaxK() {
   int minMachine = allMachines[0].size();
   for (int i = 1; i < allMachines.size(); i++) {

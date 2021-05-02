@@ -14,6 +14,6 @@ class gravity {
   inline gravity(std::vector<std::vector<float>> nCoord) { coordinates = nCoord; }
   ~gravity() {}
 
-  virtual void run();
+  virtual void run() = 0;
   std::ostream& print(std::ostream&);
 };

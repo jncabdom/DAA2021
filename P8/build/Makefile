@@ -6,7 +6,7 @@ ODIR=../src
 
 LIBS=-lm
 
-_OBJ = main.o gravity.o
+_OBJ = main.o gravity.o gravityGreedy.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 all: main

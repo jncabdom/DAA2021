@@ -19,8 +19,10 @@ void gravityParser::readFromFile(std::istream& is) {
   std::string aux;
   std::string coord;
   std::vector<float> auxPoint;
-
+  std::getline(is, aux);
+  std::getline(is, aux);
   while (std::getline(is, aux)) {
+    std::replace( aux.begin(), aux.end(), ',', '.');
     std::stringstream iss(aux);
     while (iss >> coord) {
       auxPoint.push_back(std::stof(coord));

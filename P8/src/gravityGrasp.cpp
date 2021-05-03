@@ -1,12 +1,13 @@
-#include "../include/gravityGreedy.h"
+#include "../include/gravityGrasp.h"
 
-pointSpace gravityGreedy::run(int k) {
+pointSpace gravityGrasp::run(int k) {
   pointSpace elements = coordinates;
   pointSpace solution = {};
   point center = getCenter(elements);
 
   while ((elements.size() > 0) && (solution.size() != k)) {
-    int furthest = getBetterK(1, center, elements)[0];
+    std::vector<int> furthestK = getBetterK(lrc, center, elements);
+    int furthest = furthestK[rand() % furthestK.size()];
     solution.push_back(elements[furthest]);
     elements.erase(elements.begin() + furthest);
     center = getCenter(solution);

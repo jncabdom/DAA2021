@@ -75,6 +75,8 @@ pointSpace gravity::neighborExplore(pointSpace mainSolution) {
   ls.setCoordinates(coordinates);
   ls.genSolutions();
   auto bestSol = ls.greedyExploration();
-
-  return (getZ(bestSol) > getZ(mainSolution)) ? bestSol : mainSolution;
+  if(getZ(bestSol) > getZ(mainSolution)) {
+    return neighborExplore(bestSol);
+  }
+  return mainSolution;
 }

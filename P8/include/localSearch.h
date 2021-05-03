@@ -11,7 +11,7 @@ class localSearch {
   std::vector<pointSpace> neighborSolutions = {};
   pointSpace ogCoordinates;
 
-  int getZ(pointSpace points);
+  float getZ(pointSpace points);
   float getDist(point p1, point p2);
 
  public:

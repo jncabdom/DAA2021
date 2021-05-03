@@ -1,7 +1,7 @@
 #include "../include/localSearch.h"
 
-int localSearch::getZ(pointSpace points) {
-  float acc = 0;
+float localSearch::getZ(pointSpace points) {
+  float acc = 0.0;
   for (int i = 0; i < points.size(); i++) {
     for (int j = i + 1; j < points.size(); j++) {
       acc += getDist(points[i], points[j]);
@@ -11,16 +11,17 @@ int localSearch::getZ(pointSpace points) {
 }
 
 float localSearch::getDist(point p1, point p2) {
-  float accum = 0;
-  float accum2;
+  float accum = 0.0;
+  float accum2 = 0.0;
   for (int i = 0; i < p1.size(); i++) {
     accum2 = p2[i] - p1[i];
-    accum += accum2 * accum2;
+    accum += (accum2 * accum2);
   }
   return sqrt(accum);
 }
 
 void localSearch::genSolutions() {
+  neighborSolutions.clear();
   pointSpace auxSolution = mainSolution;
   for (int i = 0; i < mainSolution.size(); i++) {
     for (int j = 0; j < ogCoordinates.size(); j++) {

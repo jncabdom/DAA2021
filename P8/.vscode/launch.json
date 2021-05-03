@@ -9,7 +9,7 @@
       "type": "cppdbg",
       "request": "launch",
       "program": "${workspaceFolder}/build/gravity",
-      "args": ["${workspaceFolder}/input/max_div_20_2.txt"],
+      "args": ["${workspaceFolder}/input/max_div_15_2.txt"],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
       "environment": [],

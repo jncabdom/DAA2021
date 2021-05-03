@@ -67,7 +67,7 @@ int main(int argc, char* argv[]) {
     aux = "";
     start = std::chrono::steady_clock::now();
     points = gr.run(i);
-    points = gr.neighborExplore(points);
+     points = gr.neighborExplore(points);
     results.push_back(gr.getZ(points));
     end = std::chrono::steady_clock::now();
     times.push_back(

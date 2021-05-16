@@ -1,6 +1,10 @@
+#pragma once
+
 #include <vector>
 #include <math.h>
 #include <algorithm>
+
+#include "searchNode.h"
 
 typedef std::vector<float> point;
 typedef std::vector<point> pointSpace;

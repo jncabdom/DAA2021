@@ -1,12 +1,12 @@
 IDIR =../include
-CXX=g++ -g -std=c++11 -o machines -O2
+CXX=g++ -g -std=c++11 -o machines -O3
 CFLAGS=-I$(IDIR) 
 
 ODIR=../src
 
 LIBS=-lm
 
-_OBJ = mainTraza.o machine.o machines.o localSearch.o
+_OBJ = main.o machine.o machines.o localSearch.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 all: main

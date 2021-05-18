@@ -27,6 +27,19 @@ class searchNode {
   }
 
   friend bool operator<(const searchNode& l, const searchNode& r) {
-    return (l.value < r.value);
+    if (l.value != r.value) return (l.value < r.value);
+    if (l.level != r.level) return (l.level < r.level);
+    float sum1 = 0, sum2 = 0;
+    for (auto it : l.solution) {
+      for (auto p : it) {
+        sum1 += p;
+      }
+    }
+    for (auto it : r.solution) {
+      for (auto p : it) {
+        sum2 += p;
+      }
+    }
+    return sum1 < sum2;
   }
 };

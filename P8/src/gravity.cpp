@@ -1,5 +1,6 @@
 #include "../include/gravity.h"
 
+// Prints all the point space through os
 std::ostream& gravity::print(std::ostream& os) {
   for (auto it : coordinates) {
     for (auto coord : it) {
@@ -10,6 +11,7 @@ std::ostream& gravity::print(std::ostream& os) {
   return os;
 }
 
+// Calculates the center of mass of the space of points *coords*
 point gravity::getCenter(pointSpace coords) {
   point center = coords[0];
 
@@ -29,6 +31,7 @@ point gravity::getCenter(pointSpace coords) {
   return center;
 }
 
+// Calculates the euclidean distance between the two points
 float gravity::getDist(point p1, point p2) {
   float accum = 0;
   float accum2;
@@ -39,6 +42,8 @@ float gravity::getDist(point p1, point p2) {
   return sqrt(accum);
 }
 
+// Returns a vector with the k first best insertions of points to make around
+// *center*
 std::vector<int> gravity::getBetterK(int k, point center, pointSpace points) {
   std::vector<int> candidates;
   pointSpace coords = points;
@@ -60,6 +65,7 @@ std::vector<int> gravity::getBetterK(int k, point center, pointSpace points) {
   return candidates;
 }
 
+// Calculates the objective function value for *points*
 float gravity::getZ(pointSpace points) {
   float acc = 0;
   for (int i = 0; i < points.size(); i++) {
@@ -70,12 +76,14 @@ float gravity::getZ(pointSpace points) {
   return acc;
 }
 
+// Explores the neighborhood of solutions to find the best one.
+// Uses ls, an object of type localSearch
 pointSpace gravity::neighborExplore(pointSpace mainSolution) {
   ls.setMainSolution(mainSolution);
   ls.setCoordinates(coordinates);
   ls.genSolutions();
   auto bestSol = ls.greedyExploration();
-  if(getZ(bestSol) > getZ(mainSolution)) {
+  if (getZ(bestSol) > getZ(mainSolution)) {
     return neighborExplore(bestSol);
   }
   return mainSolution;

@@ -1,5 +1,7 @@
 #include "../include/gravityGreedy.h"
 
+// Greedy main run function. Just builds a solution
+// picking the best candidate every time.
 pointSpace gravityGreedy::run(int k) {
   pointSpace elements = coordinates;
   pointSpace solution = {};

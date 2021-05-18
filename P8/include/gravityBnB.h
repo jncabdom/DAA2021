@@ -5,6 +5,8 @@
 #include "gravity.h"
 #include "searchNode.h"
 
+
+
 class gravityBnB : public gravity {
  protected:
   searchNode lowerBound;

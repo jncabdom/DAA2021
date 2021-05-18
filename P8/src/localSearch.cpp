@@ -1,5 +1,7 @@
 #include "../include/localSearch.h"
 
+// Calculates the objective function Z for the
+// point space *points*
 float localSearch::getZ(pointSpace points) {
   float acc = 0.0;
   for (int i = 0; i < points.size(); i++) {
@@ -10,6 +12,7 @@ float localSearch::getZ(pointSpace points) {
   return acc;
 }
 
+// Calculates the distance between the two points
 float localSearch::getDist(point p1, point p2) {
   float accum = 0.0;
   float accum2 = 0.0;
@@ -20,6 +23,9 @@ float localSearch::getDist(point p1, point p2) {
   return sqrt(accum);
 }
 
+// Generates all neighbor solutions via interchanging
+// every point in the solution with every other point
+// that is outside.
 void localSearch::genSolutions() {
   neighborSolutions.clear();
   pointSpace auxSolution = mainSolution;
@@ -34,6 +40,8 @@ void localSearch::genSolutions() {
   }
 }
 
+// Does a greedy exploration of the solution neighborhood.
+// Returns the best one
 pointSpace localSearch::greedyExploration() {
   pointSpace bestSol = neighborSolutions[0];
   float bestZ = getZ(bestSol);
